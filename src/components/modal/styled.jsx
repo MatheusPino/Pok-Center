@@ -8,15 +8,18 @@ export const Overlay = styled.div`
 `;
 
 export const StyledModal = styled.div`
+	position: relative;
 	background-color: #fff;
 	padding: 16px;
 	border-radius: 8px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-	max-width: 400px;
+	max-width:600px;
 	width: 100%;
 	text-align: center;
+	display: flex;
+	gap: 20px;
 	img {
-		max-width: 80%;
+		max-width: 50%;
 		object-fit: contain;
 	}
 `;
@@ -29,6 +32,7 @@ export const CloseButton = styled.button`
 	border: none;
 	color: #000;
 	cursor: pointer;
+	font-weight: bold;
 `;
 
 export const Button = styled.button`

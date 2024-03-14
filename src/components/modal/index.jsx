@@ -1,3 +1,4 @@
+import { BotaoComprar } from "../botaoComprar"
 import { Overlay, StyledModal, CloseButton, Button, Card } from "./styled";
 import PropTypes from "prop-types";
 import { useState } from "react";
@@ -43,11 +44,20 @@ const previousProduct = () => {
 					<StyledModal>
 						<CloseButton onClick={handleModalClose}>X</CloseButton>
 						<img src={filteredCards[currentIndex].images.large} alt={filteredCards[currentIndex].name} />
-						<h2>{filteredCards[currentIndex].name}</h2>
-						{filteredCards[currentIndex].cardmarket ? 
-							<p>R$ {filteredCards[currentIndex].cardmarket.prices.trendPrice}</p> :
-							<p>Indisponível</p>
-						}
+						<div className="card-info">
+							<h2>{filteredCards[currentIndex].name}</h2>
+							{filteredCards[currentIndex].nationalPokedexNumbers.map((number, i) => (
+								<p key={i}>National Pokedex Number: {number}</p>
+							))}
+							{filteredCards[currentIndex].types.map((type, i) => (
+								<p key={i}>{type} Type</p>
+							))}
+							{filteredCards[currentIndex].cardmarket ? 
+								<p>R$ {filteredCards[currentIndex].cardmarket.prices.trendPrice}</p> :
+								<p>Indisponível</p>
+							}
+							<BotaoComprar />
+						</div>
 					</StyledModal>
 					<Button onClick={nextProduct}>&gt;</Button>
 				</Card>

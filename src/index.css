@@ -27,3 +27,11 @@
 .text-indisp {
   color: var(--cor-indisp);
 }
+
+.card-info{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}

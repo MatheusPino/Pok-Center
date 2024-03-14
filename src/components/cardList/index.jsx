@@ -10,7 +10,7 @@ const ProductList = () => {
   const [currentProduct, setCurrentProduct] = useState(null);
   const {modalOpen, setModalOpen} = useModal();
 
-  const { dados, loaded } = useFetchData("https://api.pokemontcg.io/v2/cards?select=id,name,images,cardmarket&page=2&pageSize=100");
+  const { dados, loaded } = useFetchData("https://api.pokemontcg.io/v2/cards?page=2&pageSize=100");
   const { search } = useSearch();
 
   const filteredProducts = dados.filter((product) =>
