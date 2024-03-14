@@ -1,4 +1,4 @@
-import { Overlay, StyledModal, CloseButton, Button } from "./styled";
+import { Overlay, StyledModal, CloseButton, Button, Card } from "./styled";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useModal } from "../../contexts/openModalContext";
@@ -37,17 +37,21 @@ const previousProduct = () => {
 
 	return (
 		<>
-			<Overlay visible={modalOpen} />
-			<StyledModal>
-				<CloseButton onClick={handleModalClose}>X</CloseButton>
-				<img src={filteredCards[currentIndex].images.large} alt={filteredCards[currentIndex].name} />
-				<h2>{filteredCards[currentIndex].name}</h2>
-				<p>R$ {filteredCards[currentIndex].cardmarket.prices.trendPrice}</p>
-				<div className="">
-					<Button onClick={previousProduct}>Anterior</Button>
-					<Button onClick={nextProduct}>Próximo</Button>
-				</div>
-			</StyledModal>
+			<Overlay visible={modalOpen}>
+				<Card>
+					<Button onClick={previousProduct}>&lt;</Button>
+					<StyledModal>
+						<CloseButton onClick={handleModalClose}>X</CloseButton>
+						<img src={filteredCards[currentIndex].images.large} alt={filteredCards[currentIndex].name} />
+						<h2>{filteredCards[currentIndex].name}</h2>
+						{filteredCards[currentIndex].cardmarket ? 
+							<p>R$ {filteredCards[currentIndex].cardmarket.prices.trendPrice}</p> :
+							<p>Indisponível</p>
+						}
+					</StyledModal>
+					<Button onClick={nextProduct}>&gt;</Button>
+				</Card>
+			</Overlay>
 		</>
 	);
 };

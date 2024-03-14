@@ -6,6 +6,7 @@
 
 :root {
   --cor-preco: green;
+  --cor-indisp: red;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -21,4 +22,8 @@
 
 .text-preco {
   color: var(--cor-preco);
+}
+
+.text-indisp {
+  color: var(--cor-indisp);
 }
