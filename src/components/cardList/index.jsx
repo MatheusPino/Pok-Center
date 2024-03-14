@@ -10,7 +10,7 @@ const ProductList = () => {
   const [currentProduct, setCurrentProduct] = useState(null);
   const {modalOpen, setModalOpen} = useModal();
 
-  const { dados, loaded } = useFetchData("https://api.pokemontcg.io/v2/cards");
+  const { dados, loaded } = useFetchData("https://api.pokemontcg.io/v2/cards?page=2&pageSize=100");
   const { search } = useSearch();
 
   const filteredProducts = dados.filter((product) =>
@@ -31,7 +31,10 @@ const ProductList = () => {
               <StyledLi key={product.id} onClick={() => handleModalOpen(product)}>
                 <img src={product.images.small} alt={product.name} className="" />
                 <p className="">{product.name}</p>
-                <p className="text-green">R$ {product.cardmarket.prices.trendPrice}</p>
+                {product.cardmarket ?
+                  <p className="text-preco"> R$ {product.cardmarket.prices.trendPrice}</p> : 
+                  <p className="text-indisp">Indisponível</p>
+                  }
               </StyledLi>
             ))}
           </StyledUl>
