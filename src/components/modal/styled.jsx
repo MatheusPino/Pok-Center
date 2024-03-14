@@ -36,7 +36,7 @@ export const CloseButton = styled.button`
 `;
 
 export const Button = styled.button`
-  background-color: #E7BBBF;
+  background-color: #D72635;
   color: #fff;
   padding: 4px 12px;
   border: none;
@@ -46,7 +46,7 @@ export const Button = styled.button`
   font-size: 32px;
 
   &:hover {
-    background-color: #D72635;
+    background-color: #9c0915;
   }
 `;
 
