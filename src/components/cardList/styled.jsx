@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 	position: relative;
-	max-width: 1280px;
+	max-width: 1240px;
 	padding: 2rem;
 	margin: 0 auto;
 	text-align: center;
@@ -26,7 +26,9 @@ export const StyledLi = styled.li`
 	border-radius: 4px;
 	transition: transform 0.3s ease;
 	list-style-type: none;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 	&:hover {
 		transform: scale(1.05);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 	}
 `;
