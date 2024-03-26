@@ -3,6 +3,7 @@ import Header from "./components/header";
 import ProductList from "./components/cardList";
 import { SearchProvider } from "./contexts/searchContext";
 import { ModalProvider } from "./contexts/openModalContext";
+import Footer from "./components/footer";
 
 function App() {
 	return (
@@ -12,7 +13,9 @@ function App() {
 					<Header />
 					<ProductList />
 				</SearchProvider>
+				<Footer />
 			</ModalProvider>
+		
 		</>
 	);
 }
