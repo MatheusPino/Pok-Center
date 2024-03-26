@@ -17,6 +17,13 @@ export const StyledUl = styled.ul`
 		max-width: 180px;
 		object-fit: contain;
 	}
+	@media screen and (max-width: 768px) {
+		grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+		img {
+			max-width: 116px;
+			object-fit: contain;
+		}
+  }
 `;
 
 export const StyledLi = styled.li`
