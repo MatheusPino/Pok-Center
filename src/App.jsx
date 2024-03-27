@@ -13,7 +13,6 @@ function App() {
 				<SearchProvider>
 					<Header />
 					<ProductList />
-					<Footer />
 				</SearchProvider>
 				<Footer />
 			</ModalProvider>
